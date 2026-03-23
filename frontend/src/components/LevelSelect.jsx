@@ -48,11 +48,11 @@ const ProjectModal = ({ project, onClose, onNavigate }) => {
 
           {/* Image Carousel */}
           <div className="relative mb-8 group">
-            <div className="aspect-video bg-black border-2 border-pink-900 overflow-hidden">
+            <div className="bg-black border-2 border-pink-900 overflow-hidden flex items-center justify-center" style={{ minHeight: '400px', maxHeight: '600px' }}>
               <img
                 src={project.images[currentImageIndex]}
                 alt={`${project.title} screenshot ${currentImageIndex + 1}`}
-                className="w-full h-full object-cover"
+                className="max-w-full max-h-[600px] object-contain"
               />
             </div>
             
@@ -136,7 +136,7 @@ const ProjectModal = ({ project, onClose, onNavigate }) => {
           </div>
 
           {/* Navigation */}
-          <div className="flex justify-between items-center mt-12 pt-8 border-t-2 border-pink-900">
+          <div className="flex flex-wrap justify-between items-center gap-4 mt-12 pt-8 border-t-2 border-pink-900">
             <button
               onClick={() => onNavigate('prev')}
               disabled={project.level === 1}
@@ -145,18 +145,46 @@ const ProjectModal = ({ project, onClose, onNavigate }) => {
               ← PREV LEVEL
             </button>
             
-            {/* Go to Game Button */}
-            {project.gameUrl && (
-              <a
-                href={project.gameUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-8 py-3 bg-pink-500 text-black font-bold font-mono hover:bg-pink-400 transition-all duration-300 flex items-center gap-2"
-                style={{ boxShadow: '0 0 20px rgba(255, 0, 110, 0.6)' }}
-              >
-                🎮 GO TO GAME
-              </a>
-            )}
+            <div className="flex flex-wrap gap-4 items-center justify-center">
+              {/* Go to Game Button */}
+              {project.gameUrl && (
+                <a
+                  href={project.gameUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-8 py-3 bg-pink-500 text-black font-bold font-mono hover:bg-pink-400 transition-all duration-300 flex items-center gap-2"
+                  style={{ boxShadow: '0 0 20px rgba(255, 0, 110, 0.6)' }}
+                >
+                  🎮 GO TO GAME
+                </a>
+              )}
+              
+              {/* Open Document Button */}
+              {project.documentUrl && (
+                <a
+                  href={project.documentUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-8 py-3 bg-cyan-500 text-black font-bold font-mono hover:bg-cyan-400 transition-all duration-300 flex items-center gap-2"
+                  style={{ boxShadow: '0 0 20px rgba(0, 240, 255, 0.6)' }}
+                >
+                  📄 OPEN DOCUMENT
+                </a>
+              )}
+              
+              {/* Open PDF Button */}
+              {project.pdfUrl && (
+                <a
+                  href={project.pdfUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-8 py-3 bg-orange-500 text-black font-bold font-mono hover:bg-orange-400 transition-all duration-300 flex items-center gap-2"
+                  style={{ boxShadow: '0 0 20px rgba(255, 107, 0, 0.6)' }}
+                >
+                  📋 OPEN PDF
+                </a>
+              )}
+            </div>
             
             <button
               onClick={() => onNavigate('next')}
@@ -173,6 +201,9 @@ const ProjectModal = ({ project, onClose, onNavigate }) => {
 };
 
 const LevelCard = ({ project, onClick }) => {
+  // Check if this is Jumpp to use portrait aspect ratio
+  const isJumpp = project.id === 2;
+  
   return (
     <button
       onClick={onClick}
@@ -180,11 +211,11 @@ const LevelCard = ({ project, onClick }) => {
       style={{ boxShadow: '0 0 20px rgba(255, 0, 110, 0.3)' }}
     >
       {/* Image */}
-      <div className="aspect-video overflow-hidden bg-black">
+      <div className={`${isJumpp ? 'aspect-[3/4]' : 'aspect-video'} overflow-hidden bg-black`}>
         <img
           src={project.images[0]}
           alt={project.title}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0e27] via-transparent to-transparent opacity-60"></div>
       </div>
@@ -282,7 +313,7 @@ const LevelSelect = ({ onClose }) => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {projects.map((project) => (
             <LevelCard
               key={project.id}

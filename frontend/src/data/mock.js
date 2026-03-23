@@ -81,8 +81,10 @@ export const projects = [
     solution: 'Decided on mechanism where both players will have inverse gravity switch but it controls gravity for both players. Added multiple puzzles to make it challenging.',
     technologies: ['Unity', '2D Design', 'Rapid Prototyping', 'Game Jam'],
     images: [
-      'https://placehold.co/800x600/1a1a2e/39ff14?text=Switch+IT+1',
-      'https://placehold.co/800x600/1a1a2e/39ff14?text=Switch+IT+2'
+      'https://customer-assets.emergentagent.com/job_portfolio-quest-hub/artifacts/kgpz32d4_switch%20it1.jpeg',
+      'https://customer-assets.emergentagent.com/job_portfolio-quest-hub/artifacts/7ah7gpr3_switch%20it2.jpeg',
+      'https://customer-assets.emergentagent.com/job_portfolio-quest-hub/artifacts/npt0v0dv_WhatsApp%20Image%202026-03-20%20at%207.23.42%20PM.jpeg',
+      'https://customer-assets.emergentagent.com/job_portfolio-quest-hub/artifacts/lloduj95_WhatsApp%20Image%202026-03-20%20at%207.24.12%20PM.jpeg'
     ],
     gameUrl: 'https://piratewebx.itch.io/switchit',
     status: 'completed'
@@ -103,6 +105,40 @@ export const projects = [
       'https://placehold.co/800x600/1a1a2e/ffff00?text=Lab+Masters+2'
     ],
     gameUrl: 'https://piratewebx.itch.io/labmaster-a-lab-game',
+    status: 'completed'
+  },
+  {
+    id: 5,
+    level: 5,
+    title: 'LILA Games Documentation',
+    subtitle: 'Assignment Report & Task Execution',
+    year: '2024',
+    description: 'This is an Assignment Report for LILA Games, written and executed for the tasks given.',
+    role: 'Game Designer',
+    challenges: 'Comprehensive documentation of game design tasks and execution process.',
+    solution: 'Created detailed assignment report covering all aspects of the project requirements and implementation.',
+    technologies: ['Game Design', 'Documentation', 'Task Analysis', 'Project Management'],
+    images: [
+      'https://placehold.co/800x600/1a1a2e/00d9ff?text=LILA+Games+Documentation'
+    ],
+    documentUrl: 'https://docs.google.com/document/d/1D2Kpsun2aBbLToLU5OT2yiSBFOCcOe2KrNoQ8RhBYJ8/edit?tab=t.0',
+    status: 'completed'
+  },
+  {
+    id: 6,
+    level: 6,
+    title: '8 Ball Pool Breakdown',
+    subtitle: 'Game Analysis & Documentation',
+    year: '2024',
+    description: 'A detailed breakdown of the famous multiplayer real money game 8 Ball Pool by Miniclip, analyzing game mechanics, monetization, and player engagement strategies.',
+    role: 'Game Analyst & Designer',
+    challenges: 'Breaking down a complex multiplayer system and understanding the monetization mechanics.',
+    solution: 'Created comprehensive documentation analyzing game loops, mechanics, and business model.',
+    technologies: ['Game Analysis', 'Documentation', 'Multiplayer Systems', 'Monetization Design'],
+    images: [
+      'https://placehold.co/800x600/1a1a2e/ff6b00?text=8+Ball+Pool+Analysis'
+    ],
+    pdfUrl: 'https://drive.google.com/file/d/1ROf0RlYeBUODJyEYQTgWO9DXBT41X-ci/view',
     status: 'completed'
   }
 ];

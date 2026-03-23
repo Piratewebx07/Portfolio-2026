@@ -1,0 +1,26 @@
+/* Game Portfolio Styles */
+.App {
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Prevent text selection during interactions */
+* {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Allow text selection in content areas */
+p, span, div[class*="prose"] {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}

@@ -1,0 +1,117 @@
+import React from 'react';
+import { User, Map, BookOpen, Award } from 'lucide-react';
+
+const MenuBox = ({ title, icon: Icon, onClick, color }) => {
+  return (
+    <button
+      onClick={onClick}
+      className="group relative bg-[#0a0e27] border-2 p-8 transition-all duration-300 hover:scale-105 hover:bg-[#0f1435] focus:outline-none"
+      style={{
+        borderColor: color,
+        boxShadow: `0 0 10px ${color}40`
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.boxShadow = `0 0 30px ${color}, inset 0 0 20px ${color}20`;
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.boxShadow = `0 0 10px ${color}40`;
+      }}
+    >
+      {/* Corner Brackets */}
+      <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2" style={{ borderColor: color }}></div>
+      <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2" style={{ borderColor: color }}></div>
+      <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2" style={{ borderColor: color }}></div>
+      <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2" style={{ borderColor: color }}></div>
+
+      <div className="flex flex-col items-center gap-4">
+        <Icon 
+          className="w-16 h-16 transition-all duration-300 group-hover:scale-110" 
+          style={{ 
+            color: color,
+            filter: `drop-shadow(0 0 8px ${color})`
+          }}
+        />
+        <h3 
+          className="text-2xl font-bold tracking-wider"
+          style={{
+            fontFamily: 'Orbitron, sans-serif',
+            color: color,
+            textShadow: `0 0 10px ${color}80`
+          }}
+        >
+          {title}
+        </h3>
+      </div>
+
+      {/* Hover Effect Line */}
+      <div 
+        className="absolute bottom-0 left-0 h-1 w-0 group-hover:w-full transition-all duration-300"
+        style={{ backgroundColor: color, boxShadow: `0 0 10px ${color}` }}
+      ></div>
+    </button>
+  );
+};
+
+const MainMenu = ({ onSelectMenu }) => {
+  const menuItems = [
+    { title: 'CHARACTER STATS', icon: User, action: 'stats', color: '#00f0ff' },
+    { title: 'SELECT LEVEL', icon: Map, action: 'levels', color: '#ff006e' },
+    { title: 'LORE LOG', icon: BookOpen, action: 'lore', color: '#39ff14' },
+    { title: 'CREDITS', icon: Award, action: 'credits', color: '#ffff00' }
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-[#050510] via-[#0a0e27] to-[#050510] py-12 px-4 relative overflow-hidden">
+      {/* Background Grid */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `
+            linear-gradient(rgba(0, 240, 255, 0.2) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0, 240, 255, 0.2) 1px, transparent 1px)
+          `,
+          backgroundSize: '40px 40px'
+        }}></div>
+      </div>
+
+      <div className="relative z-10 max-w-6xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h1 
+            className="text-5xl md:text-7xl font-bold mb-4"
+            style={{
+              fontFamily: 'Orbitron, sans-serif',
+              background: 'linear-gradient(90deg, #00f0ff 0%, #ff006e 50%, #39ff14 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+              filter: 'drop-shadow(0 0 20px rgba(0, 240, 255, 0.5))'
+            }}
+          >
+            MAIN MENU
+          </h1>
+          <p className="text-cyan-300 text-lg font-mono">SELECT YOUR QUEST</p>
+        </div>
+
+        {/* Menu Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {menuItems.map((item) => (
+            <MenuBox
+              key={item.action}
+              title={item.title}
+              icon={item.icon}
+              color={item.color}
+              onClick={() => onSelectMenu(item.action)}
+            />
+          ))}
+        </div>
+
+        {/* Footer Hint */}
+        <div className="text-center mt-12">
+          <p className="text-gray-500 text-sm font-mono animate-pulse">[ ESC ] to return to start</p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default MainMenu;

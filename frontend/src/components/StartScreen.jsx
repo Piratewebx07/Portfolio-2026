@@ -44,17 +44,17 @@ const StartScreen = ({ onStart }) => {
       <Gamepad2 className="absolute bottom-1/3 right-24 w-9 h-9 text-cyan-300 opacity-20 animate-bounce" style={{ animationDuration: '5s' }} />
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4">
-        <div className="mb-8 flex justify-center">
+      <div className="relative z-10 text-center px-4 w-full max-w-4xl mx-auto">
+        <div className="mb-6 md:mb-8 flex justify-center">
           <Gamepad2 
-            className="w-24 h-24 text-cyan-400 animate-pulse" 
+            className="w-16 h-16 md:w-24 md:h-24 text-cyan-400 animate-pulse" 
             style={{ filter: 'drop-shadow(0 0 20px rgba(0, 240, 255, 0.8))' }}
           />
         </div>
         
-        <div className="mb-6">
+        <div className="mb-4 md:mb-6">
           <p 
-            className="text-3xl md:text-4xl font-bold mb-2"
+            className="text-xl md:text-3xl lg:text-4xl font-bold mb-1 md:mb-2"
             style={{
               fontFamily: 'Orbitron, sans-serif',
               color: '#00f0ff',
@@ -65,7 +65,7 @@ const StartScreen = ({ onStart }) => {
             2026
           </p>
           <h1 
-            className={`text-6xl md:text-8xl font-bold mb-4 transition-all duration-200 ${
+            className={`text-4xl md:text-6xl lg:text-8xl font-bold mb-2 md:mb-4 transition-all duration-200 ${
               glitch ? 'glitch-effect' : ''
             }`}
             style={{
@@ -77,7 +77,7 @@ const StartScreen = ({ onStart }) => {
             PORTFOLIO
           </h1>
           <p 
-            className="text-xl md:text-2xl text-cyan-300"
+            className="text-lg md:text-xl lg:text-2xl text-cyan-300"
             style={{
               fontFamily: 'Rajdhani, sans-serif',
               letterSpacing: '0.15em'
@@ -87,9 +87,9 @@ const StartScreen = ({ onStart }) => {
           </p>
         </div>
         
-        <div className="relative inline-block">
+        <div className="relative inline-block w-full max-w-2xl">
           <p 
-            className="text-2xl md:text-3xl text-white font-mono animate-pulse"
+            className="text-lg md:text-2xl text-white font-mono animate-pulse px-4"
             style={{
               textShadow: '0 0 10px rgba(255, 255, 255, 0.5)'
             }}
@@ -99,7 +99,7 @@ const StartScreen = ({ onStart }) => {
           <div className="absolute -inset-2 border-2 border-cyan-400 opacity-50 animate-ping"></div>
         </div>
 
-        <p className="mt-8 text-cyan-300 text-sm font-mono">Pratham Warambhey • Game Designer • Level Designer</p>
+        <p className="mt-6 md:mt-8 text-cyan-300 text-xs md:text-sm font-mono px-4">Pratham Warambhey • Game Designer • Level Designer</p>
       </div>
 
       <style jsx>{`

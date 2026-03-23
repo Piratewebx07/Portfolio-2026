@@ -24,3 +24,40 @@ p, span, div[class*="prose"] {
 html {
     scroll-behavior: smooth;
 }
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+    /* Ensure touch targets are at least 44x44px */
+    button, a {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Prevent zoom on input focus on iOS */
+    input, select, textarea {
+        font-size: 16px !important;
+    }
+    
+    /* Better spacing on mobile */
+    body {
+        -webkit-text-size-adjust: 100%;
+    }
+}
+
+/* Fix for iOS Safari bottom bar */
+@supports (-webkit-touch-callout: none) {
+    .App {
+        min-height: -webkit-fill-available;
+    }
+}
+
+/* Prevent horizontal scroll on mobile */
+body {
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Improve tap highlighting */
+* {
+    -webkit-tap-highlight-color: rgba(0, 240, 255, 0.3);
+}

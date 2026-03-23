@@ -5,12 +5,13 @@ const MenuBox = ({ title, icon: Icon, onClick, color }) => {
   return (
     <button
       onClick={onClick}
-      className="group relative bg-gradient-to-br from-[#0f1435] to-[#0a0e27] border-2 p-8 transition-all duration-500 focus:outline-none"
+      className="group relative bg-gradient-to-br from-[#0f1435] to-[#0a0e27] border-2 p-6 md:p-8 transition-all duration-500 focus:outline-none touch-manipulation"
       style={{
         borderColor: color,
         boxShadow: `0 10px 30px ${color}20`,
         transform: 'translateZ(0)',
-        perspective: '1000px'
+        perspective: '1000px',
+        minHeight: '120px'
       }}
       onMouseEnter={(e) => {
         e.currentTarget.style.transform = 'translateY(-12px) rotateX(8deg) scale(1.02)';
@@ -21,16 +22,16 @@ const MenuBox = ({ title, icon: Icon, onClick, color }) => {
         e.currentTarget.style.boxShadow = `0 10px 30px ${color}20`;
       }}
     >
-      <div className="flex flex-col items-center gap-4 relative z-10">
+      <div className="flex flex-col items-center gap-3 md:gap-4 relative z-10">
         <div 
-          className="p-4 rounded-xl transition-all duration-500 group-hover:scale-110"
+          className="p-3 md:p-4 rounded-xl transition-all duration-500 group-hover:scale-110"
           style={{ 
             backgroundColor: `${color}15`,
             boxShadow: `0 0 30px ${color}40`
           }}
         >
           <Icon 
-            className="w-16 h-16 transition-all duration-500" 
+            className="w-12 h-12 md:w-16 md:h-16 transition-all duration-500" 
             style={{ 
               color: color,
               filter: `drop-shadow(0 0 12px ${color})`
@@ -38,7 +39,7 @@ const MenuBox = ({ title, icon: Icon, onClick, color }) => {
           />
         </div>
         <h3 
-          className="text-2xl font-bold tracking-wider transition-all duration-300 group-hover:scale-105"
+          className="text-lg md:text-2xl font-bold tracking-wider transition-all duration-300 group-hover:scale-105 text-center"
           style={{
             fontFamily: 'Orbitron, sans-serif',
             color: color,
@@ -71,9 +72,9 @@ const MenuBox = ({ title, icon: Icon, onClick, color }) => {
 
 const MainMenu = ({ onSelectMenu }) => {
   const menuItems = [
+    { title: 'LORE LOG', icon: BookOpen, action: 'lore', color: '#39ff14' },
     { title: 'CHARACTER STATS', icon: User, action: 'stats', color: '#00f0ff' },
     { title: 'SELECT LEVEL', icon: Map, action: 'levels', color: '#ff006e' },
-    { title: 'LORE LOG', icon: BookOpen, action: 'lore', color: '#39ff14' },
     { title: 'CERTIFICATES', icon: Award, action: 'certificates', color: '#a855f7' },
     { title: 'CREDITS', icon: Award, action: 'credits', color: '#ffff00' }
   ];
@@ -101,9 +102,9 @@ const MainMenu = ({ onSelectMenu }) => {
 
       <div className="relative z-10 max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 md:mb-16 px-4">
           <h1 
-            className="text-5xl md:text-7xl font-bold mb-4"
+            className="text-3xl md:text-5xl lg:text-7xl font-bold mb-2 md:mb-4"
             style={{
               fontFamily: 'Orbitron, sans-serif',
               background: 'linear-gradient(90deg, #00f0ff 0%, #ff006e 50%, #39ff14 100%)',
@@ -115,11 +116,11 @@ const MainMenu = ({ onSelectMenu }) => {
           >
             MAIN MENU
           </h1>
-          <p className="text-cyan-300 text-lg font-mono">SELECT YOUR QUEST</p>
+          <p className="text-cyan-300 text-sm md:text-lg font-mono">SELECT YOUR QUEST</p>
         </div>
 
         {/* Menu Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 max-w-6xl mx-auto px-4">
           {menuItems.map((item) => (
             <MenuBox
               key={item.action}
@@ -132,8 +133,8 @@ const MainMenu = ({ onSelectMenu }) => {
         </div>
 
         {/* Footer Hint */}
-        <div className="text-center mt-12">
-          <p className="text-gray-500 text-sm font-mono animate-pulse">[ ESC ] to return to start</p>
+        <div className="text-center mt-8 md:mt-12 px-4">
+          <p className="text-gray-500 text-xs md:text-sm font-mono animate-pulse">[ ESC ] to return to start</p>
         </div>
       </div>
     </div>

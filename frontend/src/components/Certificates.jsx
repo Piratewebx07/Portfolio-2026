@@ -45,34 +45,64 @@ const CertificateCard = ({ certificate, onClick }) => {
   return (
     <button
       onClick={onClick}
-      className="group relative bg-[#0a0e27] border-2 border-purple-500 overflow-hidden transition-all duration-300 hover:scale-105"
-      style={{ boxShadow: '0 0 20px rgba(168, 85, 247, 0.3)' }}
+      className="group relative bg-gradient-to-br from-[#0f1435] to-[#0a0e27] border-2 border-purple-500 overflow-hidden transition-all duration-500"
+      style={{ 
+        boxShadow: '0 10px 30px rgba(168, 85, 247, 0.2)',
+        transform: 'translateZ(0)',
+        perspective: '1000px'
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.transform = 'translateY(-12px) rotateX(8deg) scale(1.02)';
+        e.currentTarget.style.boxShadow = '0 25px 50px rgba(168, 85, 247, 0.5)';
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.transform = 'translateY(0) rotateX(0deg) scale(1)';
+        e.currentTarget.style.boxShadow = '0 10px 30px rgba(168, 85, 247, 0.2)';
+      }}
     >
       {/* Certificate Image */}
       <div className="aspect-[4/3] overflow-hidden bg-black relative">
         <img
           src={certificate.image}
           alt={certificate.title}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0e27] via-transparent to-transparent opacity-60"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0e27] via-transparent to-transparent opacity-70"></div>
         
-        {/* Hover overlay */}
-        <div className="absolute inset-0 bg-purple-500 bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
-          <Maximize2 className="w-12 h-12 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        {/* Hover overlay with 3D effect */}
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-500 bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-500 flex items-center justify-center">
+          <div className="opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-100 scale-75">
+            <Maximize2 className="w-16 h-16 text-white drop-shadow-2xl" />
+          </div>
+        </div>
+        
+        {/* Glow effect on hover */}
+        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" 
+          style={{
+            background: 'radial-gradient(circle at center, rgba(168, 85, 247, 0.3) 0%, transparent 70%)'
+          }}
+        ></div>
+      </div>
+
+      {/* Certificate Info with 3D layering */}
+      <div className="p-5 relative z-10">
+        <h3 className="text-white text-lg font-bold mb-2 group-hover:text-purple-300 transition-colors duration-300" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+          {certificate.title}
+        </h3>
+        <p className="text-purple-400 text-sm mb-2">{certificate.description}</p>
+        <div className="flex justify-between items-center">
+          <span className="text-purple-300 text-sm font-medium">{certificate.issuer}</span>
+          <span className="text-purple-400 font-mono text-xs">{certificate.date}</span>
         </div>
       </div>
 
-      {/* Certificate Info */}
-      <div className="p-4 text-left">
-        <h3 className="text-white text-lg font-bold mb-2" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
-          {certificate.title}
-        </h3>
-        <div className="flex justify-between items-center">
-          <span className="text-purple-400 text-sm">{certificate.issuer}</span>
-          <span className="text-purple-300 font-mono text-xs">{certificate.date}</span>
-        </div>
-      </div>
+      {/* Animated border effect */}
+      <div className="absolute inset-0 border-2 border-purple-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+        style={{ 
+          boxShadow: 'inset 0 0 30px rgba(168, 85, 247, 0.3)',
+          animation: 'pulse 2s ease-in-out infinite'
+        }}
+      ></div>
     </button>
   );
 };

@@ -3,30 +3,36 @@ import { X, TrendingUp } from 'lucide-react';
 import * as Icons from 'lucide-react';
 import { skills, software } from '../data/mock';
 
-const StatBar = ({ skill }) => {
+const SkillCard = ({ skill }) => {
   const IconComponent = Icons[skill.icon] || Icons.Star;
   
   return (
-    <div className="mb-6">
-      <div className="flex items-center justify-between mb-2">
-        <div className="flex items-center gap-3">
-          <IconComponent className="w-5 h-5 text-cyan-400" />
-          <span className="text-white font-semibold text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
-            {skill.name}
-          </span>
-        </div>
-        <span className="text-cyan-400 font-bold font-mono">{skill.level}%</span>
-      </div>
-      <div className="relative h-3 bg-[#0a0e27] border border-cyan-900 overflow-hidden">
-        <div
-          className="h-full bg-gradient-to-r from-cyan-500 to-cyan-300 transition-all duration-1000 ease-out"
-          style={{
-            width: `${skill.level}%`,
-            boxShadow: '0 0 10px rgba(0, 240, 255, 0.8)'
-          }}
+    <div 
+      className="group relative bg-gradient-to-br from-[#0f1435] to-[#0a0e27] border border-cyan-900 p-4 transition-all duration-300 hover:border-cyan-400"
+      style={{ 
+        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.3)',
+        transform: 'translateZ(0)',
+        perspective: '1000px'
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.transform = 'translateY(-8px) rotateX(5deg)';
+        e.currentTarget.style.boxShadow = '0 20px 40px rgba(0, 240, 255, 0.4)';
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.transform = 'translateY(0) rotateX(0deg)';
+        e.currentTarget.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.3)';
+      }}
+    >
+      <div className="flex items-center gap-3">
+        <div 
+          className="p-3 bg-cyan-500 bg-opacity-10 rounded-lg transition-all duration-300 group-hover:bg-opacity-20"
+          style={{ boxShadow: '0 0 20px rgba(0, 240, 255, 0.2)' }}
         >
-          <div className="absolute inset-0 bg-white opacity-20 animate-pulse"></div>
+          <IconComponent className="w-6 h-6 text-cyan-400" />
         </div>
+        <span className="text-white font-semibold text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+          {skill.name}
+        </span>
       </div>
     </div>
   );
@@ -85,9 +91,11 @@ const CharacterStats = ({ onClose }) => {
             <div className="h-1 w-32 bg-gradient-to-r from-cyan-500 to-transparent"></div>
           </div>
 
-          {skills.map((skill, index) => (
-            <StatBar key={index} skill={skill} />
-          ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+            {skills.map((skill, index) => (
+              <SkillCard key={index} skill={skill} />
+            ))}
+          </div>
 
           {/* Software Section */}
           <div className="mt-12 pt-8 border-t-2 border-cyan-900">
@@ -98,18 +106,31 @@ const CharacterStats = ({ onClose }) => {
               {software.map((tool, index) => (
                 <div 
                   key={index}
-                  className="flex flex-col items-center p-4 border border-cyan-900 transition-all duration-300 hover:border-cyan-400 hover:scale-105 group"
-                  style={{ boxShadow: '0 0 10px rgba(0, 240, 255, 0.1)' }}
+                  className="flex flex-col items-center p-4 border border-cyan-900 transition-all duration-300 hover:border-cyan-400 group bg-gradient-to-br from-[#0f1435] to-[#0a0e27]"
+                  style={{ 
+                    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.3)',
+                    transform: 'translateZ(0)'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-8px) scale(1.05)';
+                    e.currentTarget.style.boxShadow = '0 20px 40px rgba(0, 240, 255, 0.4)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                    e.currentTarget.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.3)';
+                  }}
                 >
-                  <div className="w-16 h-16 mb-3 flex items-center justify-center bg-white rounded-lg overflow-hidden">
+                  <div 
+                    className="w-16 h-16 mb-3 flex items-center justify-center bg-white rounded-lg overflow-hidden transition-transform duration-300 group-hover:scale-110"
+                    style={{ boxShadow: '0 4px 10px rgba(0, 240, 255, 0.3)' }}
+                  >
                     <img 
                       src={tool.logo} 
                       alt={tool.name}
                       className="w-full h-full object-contain p-2"
                     />
                   </div>
-                  <div className="text-white font-semibold text-sm text-center mb-1">{tool.name}</div>
-                  <div className="text-cyan-400 text-xs font-mono">{tool.proficiency}</div>
+                  <div className="text-white font-semibold text-sm text-center">{tool.name}</div>
                 </div>
               ))}
             </div>

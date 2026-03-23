@@ -12,23 +12,19 @@ export const skills = [
 export const software = [
   { 
     name: 'Unity 3D', 
-    logo: 'https://customer-assets.emergentagent.com/job_portfolio-quest-hub/artifacts/g6yx0l04_unity.png',
-    proficiency: 'Expert'
+    logo: 'https://customer-assets.emergentagent.com/job_portfolio-quest-hub/artifacts/g6yx0l04_unity.png'
   },
   { 
     name: 'Unreal Engine', 
-    logo: 'https://cdn2.unrealengine.com/ue-logo-stacked-unreal-engine-w-677x545-fac11de0943f.png',
-    proficiency: 'Intermediate'
+    logo: 'https://cdn2.unrealengine.com/ue-logo-stacked-unreal-engine-w-677x545-fac11de0943f.png'
   },
   { 
     name: 'Procreate', 
-    logo: 'https://procreate.com/img/procreate-icon.png',
-    proficiency: 'Advanced'
+    logo: 'https://procreate.com/img/procreate-icon.png'
   },
   { 
     name: 'Figma', 
-    logo: 'https://customer-assets.emergentagent.com/job_portfolio-quest-hub/artifacts/1o6h0kd3_figma.jpg',
-    proficiency: 'Advanced'
+    logo: 'https://customer-assets.emergentagent.com/job_portfolio-quest-hub/artifacts/1o6h0kd3_figma.jpg'
   }
 ];
 
@@ -135,23 +131,34 @@ export const credits = {
 export const certificates = [
   {
     id: 1,
-    title: 'Game Design Certificate 1',
-    issuer: 'Institute Name',
-    date: '2024',
-    image: 'https://placehold.co/1200x900/1a1a2e/00f0ff?text=Certificate+1'
+    title: 'Pixelverse - Runner Up',
+    issuer: 'Seamedu & CMR University',
+    date: 'November 2024',
+    description: 'Runner Up in Showcase Event',
+    image: 'https://customer-assets.emergentagent.com/job_portfolio-quest-hub/artifacts/4bcp2ztp_WhatsApp%20Image%202024-12-12%20at%2009.47.22_5946b40b.jpg'
   },
   {
     id: 2,
-    title: 'Game Design Certificate 2',
-    issuer: 'Institute Name',
-    date: '2024',
-    image: 'https://placehold.co/1200x900/1a1a2e/ff006e?text=Certificate+2'
+    title: 'Best 3D Game Award',
+    issuer: 'Seamedu Awards 2024',
+    date: 'April 2024',
+    description: 'Certificate of Achievement for Best 3D Game',
+    image: 'https://customer-assets.emergentagent.com/job_portfolio-quest-hub/artifacts/2fisqaw8_WhatsApp%20Image%202024-12-12%20at%2009.48.11_a0d83dcd.jpg'
   },
   {
     id: 3,
-    title: 'Game Design Certificate 3',
-    issuer: 'Institute Name',
-    date: '2025',
-    image: 'https://placehold.co/1200x900/1a1a2e/39ff14?text=Certificate+3'
+    title: 'Game Design Internship',
+    issuer: 'eSrot Consulting Labs Pvt. Ltd.',
+    date: 'July 2025',
+    description: '6 Months Internship in Game Design',
+    image: 'https://customer-assets.emergentagent.com/job_portfolio-quest-hub/artifacts/ti98xnsr_Centrelocus.png'
+  },
+  {
+    id: 4,
+    title: 'Unreal Engine 5 C++',
+    issuer: 'Udemy',
+    date: 'May 2024',
+    description: 'The Ultimate Game Developer Course',
+    image: 'https://customer-assets.emergentagent.com/job_portfolio-quest-hub/artifacts/p99c709k_UdemyPratham.png'
   }
 ];

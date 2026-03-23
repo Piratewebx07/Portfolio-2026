@@ -5,42 +5,65 @@ const MenuBox = ({ title, icon: Icon, onClick, color }) => {
   return (
     <button
       onClick={onClick}
-      className="group relative bg-[#0a0e27] border-2 p-8 transition-all duration-300 hover:scale-105 hover:bg-[#0f1435] focus:outline-none"
+      className="group relative bg-gradient-to-br from-[#0f1435] to-[#0a0e27] border-2 p-8 transition-all duration-500 focus:outline-none"
       style={{
         borderColor: color,
-        boxShadow: `0 0 10px ${color}40`
+        boxShadow: `0 10px 30px ${color}20`,
+        transform: 'translateZ(0)',
+        perspective: '1000px'
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.boxShadow = `0 0 30px ${color}, inset 0 0 20px ${color}20`;
+        e.currentTarget.style.transform = 'translateY(-12px) rotateX(8deg) scale(1.02)';
+        e.currentTarget.style.boxShadow = `0 25px 50px ${color}, inset 0 0 30px ${color}20`;
       }}
       onMouseLeave={(e) => {
-        e.currentTarget.style.boxShadow = `0 0 10px ${color}40`;
+        e.currentTarget.style.transform = 'translateY(0) rotateX(0deg) scale(1)';
+        e.currentTarget.style.boxShadow = `0 10px 30px ${color}20`;
       }}
     >
-      <div className="flex flex-col items-center gap-4">
-        <Icon 
-          className="w-16 h-16 transition-all duration-300 group-hover:scale-110" 
+      <div className="flex flex-col items-center gap-4 relative z-10">
+        <div 
+          className="p-4 rounded-xl transition-all duration-500 group-hover:scale-110"
           style={{ 
-            color: color,
-            filter: `drop-shadow(0 0 8px ${color})`
+            backgroundColor: `${color}15`,
+            boxShadow: `0 0 30px ${color}40`
           }}
-        />
+        >
+          <Icon 
+            className="w-16 h-16 transition-all duration-500" 
+            style={{ 
+              color: color,
+              filter: `drop-shadow(0 0 12px ${color})`
+            }}
+          />
+        </div>
         <h3 
-          className="text-2xl font-bold tracking-wider"
+          className="text-2xl font-bold tracking-wider transition-all duration-300 group-hover:scale-105"
           style={{
             fontFamily: 'Orbitron, sans-serif',
             color: color,
-            textShadow: `0 0 10px ${color}80`
+            textShadow: `0 0 15px ${color}80, 0 0 30px ${color}40`
           }}
         >
           {title}
         </h3>
       </div>
 
-      {/* Hover Effect Line */}
+      {/* Animated bottom line */}
       <div 
-        className="absolute bottom-0 left-0 h-1 w-0 group-hover:w-full transition-all duration-300"
-        style={{ backgroundColor: color, boxShadow: `0 0 10px ${color}` }}
+        className="absolute bottom-0 left-0 h-1 w-0 group-hover:w-full transition-all duration-500"
+        style={{ 
+          backgroundColor: color, 
+          boxShadow: `0 0 20px ${color}` 
+        }}
+      ></div>
+      
+      {/* Corner glow effect */}
+      <div 
+        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+        style={{
+          background: `radial-gradient(circle at 50% 50%, ${color}10 0%, transparent 70%)`
+        }}
       ></div>
     </button>
   );

@@ -16,11 +16,11 @@ export const software = [
   },
   { 
     name: 'Unreal Engine', 
-    logo: 'https://cdn2.unrealengine.com/ue-logo-stacked-unreal-engine-w-677x545-fac11de0943f.png'
+    logo: 'https://customer-assets.emergentagent.com/job_portfolio-quest-hub/artifacts/4n1h61ml_%7BC8760E46-E83E-403D-ACE3-6E002E5B6705%7D.png'
   },
   { 
     name: 'Procreate', 
-    logo: 'https://procreate.com/img/procreate-icon.png'
+    logo: 'https://customer-assets.emergentagent.com/job_portfolio-quest-hub/artifacts/85zyweq4_%7B71AA818A-1E46-4D62-976A-9E5715934A19%7D.png'
   },
   { 
     name: 'Figma', 
@@ -163,12 +163,12 @@ export const credits = {
   email: 'prathamwarambhey@gmail.com',
   phone: '+91 96736 07860',
   social: [
-    { platform: 'LinkedIn', url: '#', icon: 'Linkedin' },
-    { platform: 'Instagram', url: '#', icon: 'Instagram' },
-    { platform: 'GitHub', url: '#', icon: 'Github' },
+    { platform: 'LinkedIn', url: 'https://www.linkedin.com/in/prathamwarambhey/', icon: 'Linkedin' },
+    { platform: 'Instagram', url: 'https://www.instagram.com/pratham_warambhey/', icon: 'Instagram' },
+    { platform: 'GitHub', url: 'https://github.com/Piratewebx07', icon: 'Github' },
     { platform: 'Twitter', url: '#', icon: 'Twitter' }
   ],
-  resumeUrl: '/resume.pdf'
+  resumeUrl: 'https://customer-assets.emergentagent.com/job_portfolio-quest-hub/artifacts/p6fwkri0_ResumePW.pdf'
 };
 
 export const certificates = [

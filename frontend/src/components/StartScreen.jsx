@@ -54,18 +54,18 @@ const StartScreen = ({ onStart }) => {
         
         <div className="mb-6">
           <p 
-            className="text-2xl md:text-3xl font-bold mb-2"
+            className="text-3xl md:text-4xl font-bold mb-2"
             style={{
               fontFamily: 'Orbitron, sans-serif',
               color: '#00f0ff',
               textShadow: '0 0 10px rgba(0, 240, 255, 0.6)',
-              letterSpacing: '0.3em'
+              letterSpacing: '0.2em'
             }}
           >
-            PRATHAM
+            2026
           </p>
           <h1 
-            className={`text-6xl md:text-8xl font-bold transition-all duration-200 ${
+            className={`text-6xl md:text-8xl font-bold mb-4 transition-all duration-200 ${
               glitch ? 'glitch-effect' : ''
             }`}
             style={{
@@ -76,6 +76,15 @@ const StartScreen = ({ onStart }) => {
           >
             PORTFOLIO
           </h1>
+          <p 
+            className="text-xl md:text-2xl text-cyan-300"
+            style={{
+              fontFamily: 'Rajdhani, sans-serif',
+              letterSpacing: '0.15em'
+            }}
+          >
+            Game Designer
+          </p>
         </div>
         
         <div className="relative inline-block">
@@ -90,7 +99,7 @@ const StartScreen = ({ onStart }) => {
           <div className="absolute -inset-2 border-2 border-cyan-400 opacity-50 animate-ping"></div>
         </div>
 
-        <p className="mt-8 text-cyan-300 text-sm font-mono">Game Designer • Level Designer</p>
+        <p className="mt-8 text-cyan-300 text-sm font-mono">Pratham Warambhey • Game Designer • Level Designer</p>
       </div>
 
       <style jsx>{`

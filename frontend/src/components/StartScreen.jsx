@@ -52,18 +52,31 @@ const StartScreen = ({ onStart }) => {
           />
         </div>
         
-        <h1 
-          className={`text-6xl md:text-8xl font-bold mb-6 transition-all duration-200 ${
-            glitch ? 'glitch-effect' : ''
-          }`}
-          style={{
-            fontFamily: 'Orbitron, sans-serif',
-            color: '#00f0ff',
-            textShadow: '0 0 10px rgba(0, 240, 255, 0.8), 0 0 20px rgba(0, 240, 255, 0.6), 0 0 30px rgba(0, 240, 255, 0.4)'
-          }}
-        >
-          PORTFOLIO
-        </h1>
+        <div className="mb-6">
+          <p 
+            className="text-2xl md:text-3xl font-bold mb-2"
+            style={{
+              fontFamily: 'Orbitron, sans-serif',
+              color: '#00f0ff',
+              textShadow: '0 0 10px rgba(0, 240, 255, 0.6)',
+              letterSpacing: '0.3em'
+            }}
+          >
+            PRATHAM
+          </p>
+          <h1 
+            className={`text-6xl md:text-8xl font-bold transition-all duration-200 ${
+              glitch ? 'glitch-effect' : ''
+            }`}
+            style={{
+              fontFamily: 'Orbitron, sans-serif',
+              color: '#00f0ff',
+              textShadow: '0 0 10px rgba(0, 240, 255, 0.8), 0 0 20px rgba(0, 240, 255, 0.6), 0 0 30px rgba(0, 240, 255, 0.4)'
+            }}
+          >
+            PORTFOLIO
+          </h1>
+        </div>
         
         <div className="relative inline-block">
           <p 

@@ -101,8 +101,9 @@ export const projects = [
     solution: 'Revisiting our old textbooks helped me create 3 levels for the game.',
     technologies: ['Unity', 'Educational Design', 'Physics Simulation', '3D Modeling'],
     images: [
-      'https://placehold.co/800x600/1a1a2e/ffff00?text=Lab+Masters+1',
-      'https://placehold.co/800x600/1a1a2e/ffff00?text=Lab+Masters+2'
+      'https://customer-assets.emergentagent.com/job_portfolio-quest-hub/artifacts/ljskd7dl_labmaster1.jpeg',
+      'https://customer-assets.emergentagent.com/job_portfolio-quest-hub/artifacts/kkf2f6f6_labmaster2.jpeg',
+      'https://customer-assets.emergentagent.com/job_portfolio-quest-hub/artifacts/1lwxu7gh_labmaster3.jpeg'
     ],
     gameUrl: 'https://piratewebx.itch.io/labmaster-a-lab-game',
     status: 'completed'
@@ -119,7 +120,7 @@ export const projects = [
     solution: 'Created detailed assignment report covering all aspects of the project requirements and implementation.',
     technologies: ['Game Design', 'Documentation', 'Task Analysis', 'Project Management'],
     images: [
-      'https://placehold.co/800x600/1a1a2e/00d9ff?text=LILA+Games+Documentation'
+      'https://customer-assets.emergentagent.com/job_portfolio-quest-hub/artifacts/vyv89api_%7B7A98CF22-90C0-4403-A420-CA8B3A56B2F5%7D.png'
     ],
     documentUrl: 'https://docs.google.com/document/d/1D2Kpsun2aBbLToLU5OT2yiSBFOCcOe2KrNoQ8RhBYJ8/edit?tab=t.0',
     status: 'completed'
@@ -136,7 +137,7 @@ export const projects = [
     solution: 'Created comprehensive documentation analyzing game loops, mechanics, and business model.',
     technologies: ['Game Analysis', 'Documentation', 'Multiplayer Systems', 'Monetization Design'],
     images: [
-      'https://placehold.co/800x600/1a1a2e/ff6b00?text=8+Ball+Pool+Analysis'
+      'https://customer-assets.emergentagent.com/job_portfolio-quest-hub/artifacts/jxkwnf99_8bp%5B1%5D.png'
     ],
     pdfUrl: 'https://drive.google.com/file/d/1ROf0RlYeBUODJyEYQTgWO9DXBT41X-ci/view',
     status: 'completed'

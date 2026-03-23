@@ -201,21 +201,18 @@ const ProjectModal = ({ project, onClose, onNavigate }) => {
 };
 
 const LevelCard = ({ project, onClick }) => {
-  // Check if this is Jumpp to use portrait aspect ratio
-  const isJumpp = project.id === 2;
-  
   return (
     <button
       onClick={onClick}
       className="group relative bg-[#0a0e27] border-2 border-pink-500 overflow-hidden transition-all duration-300 hover:scale-105"
       style={{ boxShadow: '0 0 20px rgba(255, 0, 110, 0.3)' }}
     >
-      {/* Image */}
-      <div className={`${isJumpp ? 'aspect-[3/4]' : 'aspect-video'} overflow-hidden bg-black`}>
+      {/* Image - consistent aspect ratio for all cards */}
+      <div className="aspect-video overflow-hidden bg-black">
         <img
           src={project.images[0]}
           alt={project.title}
-          className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0e27] via-transparent to-transparent opacity-60"></div>
       </div>

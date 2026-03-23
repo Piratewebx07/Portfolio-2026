@@ -1,6 +1,6 @@
 import React from 'react';
 import { X, BookOpen, Trophy, Clock, Users } from 'lucide-react';
-import { loreLog } from '../data/mock';
+import { loreLog, certificates } from '../data/mock';
 
 const LoreLog = ({ onClose }) => {
   return (
@@ -132,6 +132,39 @@ const LoreLog = ({ onClose }) => {
           <div className="mt-8 p-6 border-l-4 border-green-400 bg-green-950 bg-opacity-20">
             <p className="text-green-300 italic text-lg">
               "Every game should tell a story, every mechanic should serve a purpose, and every challenge should inspire innovation."
+            </p>
+          </div>
+
+          {/* Certificate Previews */}
+          <div className="mt-12 pt-8 border-t-2 border-green-900">
+            <h3 className="text-2xl font-bold text-green-400 mb-6 text-center" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+              ACHIEVEMENTS & CERTIFICATES
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {certificates.slice(0, 4).map((cert) => (
+                <div 
+                  key={cert.id}
+                  className="group relative overflow-hidden border-2 border-green-900 hover:border-green-400 transition-all duration-300"
+                  style={{ 
+                    aspectRatio: '4/3',
+                    boxShadow: '0 4px 10px rgba(57, 255, 20, 0.1)'
+                  }}
+                >
+                  <img 
+                    src={cert.image} 
+                    alt={cert.title}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-70"></div>
+                  <div className="absolute bottom-2 left-2 right-2">
+                    <p className="text-green-400 text-xs font-semibold truncate">{cert.title}</p>
+                    <p className="text-green-300 text-xs opacity-80">{cert.date}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p className="text-center text-green-500 text-sm mt-4 font-mono">
+              View all in Certificates section →
             </p>
           </div>
         </div>

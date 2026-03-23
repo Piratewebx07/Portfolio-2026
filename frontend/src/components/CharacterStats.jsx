@@ -140,7 +140,7 @@ const CharacterStats = ({ onClose }) => {
           <div className="mt-12 pt-8 border-t-2 border-cyan-900">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-cyan-400 mb-1" style={{ fontFamily: 'Orbitron, sans-serif' }}>4+</div>
+                <div className="text-3xl font-bold text-cyan-400 mb-1" style={{ fontFamily: 'Orbitron, sans-serif' }}>10+</div>
                 <div className="text-gray-400 text-sm font-mono">Projects</div>
               </div>
               <div className="text-center">

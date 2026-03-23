@@ -144,6 +144,20 @@ const ProjectModal = ({ project, onClose, onNavigate }) => {
             >
               ← PREV LEVEL
             </button>
+            
+            {/* Go to Game Button */}
+            {project.gameUrl && (
+              <a
+                href={project.gameUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-3 bg-pink-500 text-black font-bold font-mono hover:bg-pink-400 transition-all duration-300 flex items-center gap-2"
+                style={{ boxShadow: '0 0 20px rgba(255, 0, 110, 0.6)' }}
+              >
+                🎮 GO TO GAME
+              </a>
+            )}
+            
             <button
               onClick={() => onNavigate('next')}
               disabled={project.level === projects.length}

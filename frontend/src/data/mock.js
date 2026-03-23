@@ -46,6 +46,7 @@ export const projects = [
       'https://customer-assets.emergentagent.com/job_portfolio-quest-hub/artifacts/4sqd7pfz_kknew2.jpeg',
       'https://customer-assets.emergentagent.com/job_portfolio-quest-hub/artifacts/a5wxb3lr_kknrew.jpeg'
     ],
+    gameUrl: 'https://piratewebx.itch.io/kala-kulfi-remastered',
     status: 'completed'
   },
   {
@@ -80,6 +81,7 @@ export const projects = [
       'https://placehold.co/800x600/1a1a2e/39ff14?text=Switch+IT+1',
       'https://placehold.co/800x600/1a1a2e/39ff14?text=Switch+IT+2'
     ],
+    gameUrl: 'https://piratewebx.itch.io/switchit',
     status: 'completed'
   },
   {
@@ -97,6 +99,7 @@ export const projects = [
       'https://placehold.co/800x600/1a1a2e/ffff00?text=Lab+Masters+1',
       'https://placehold.co/800x600/1a1a2e/ffff00?text=Lab+Masters+2'
     ],
+    gameUrl: 'https://piratewebx.itch.io/labmaster-a-lab-game',
     status: 'completed'
   }
 ];
@@ -108,7 +111,7 @@ export const loreLog = {
   profileImage: 'https://customer-assets.emergentagent.com/job_portfolio-quest-hub/artifacts/21q8c9t5_WhatsApp_Image_2026-03-21_at_11.44.27_AM-removebg-preview.png',
   stats: {
     yearsExperience: '1+',
-    projectsCompleted: '4+',
+    projectsCompleted: '10+',
     gameJams: '5+',
     dedication: '100%'
   }

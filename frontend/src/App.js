@@ -7,18 +7,22 @@ import LevelSelect from "./components/LevelSelect";
 import LoreLog from "./components/LoreLog";
 import Certificates from "./components/Certificates";
 import Credits from "./components/Credits";
+import ParticleBackground from "./components/ParticleBackground";
+import CustomCursor from "./components/CustomCursor";
+import PageTransition from "./components/PageTransition";
 
 function App() {
   const [gameState, setGameState] = useState('start'); // 'start', 'menu', 'stats', 'levels', 'lore', 'certificates', 'credits'
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   // ESC key functionality
   useEffect(() => {
     const handleEscKey = (event) => {
       if (event.key === 'Escape') {
         if (gameState === 'menu') {
-          setGameState('start');
+          handleTransition('start');
         } else if (gameState !== 'start') {
-          setGameState('menu');
+          handleTransition('menu');
         }
       }
     };
@@ -29,45 +33,40 @@ function App() {
     };
   }, [gameState]);
 
+  const handleTransition = (newState) => {
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setGameState(newState);
+      setIsTransitioning(false);
+    }, 300);
+  };
+
   const handleStart = () => {
-    setGameState('menu');
+    handleTransition('menu');
   };
 
   const handleSelectMenu = (action) => {
-    switch(action) {
-      case 'stats':
-        setGameState('stats');
-        break;
-      case 'levels':
-        setGameState('levels');
-        break;
-      case 'lore':
-        setGameState('lore');
-        break;
-      case 'certificates':
-        setGameState('certificates');
-        break;
-      case 'credits':
-        setGameState('credits');
-        break;
-      default:
-        break;
-    }
+    handleTransition(action);
   };
 
   const handleBack = () => {
-    setGameState('menu');
+    handleTransition('menu');
   };
 
   return (
-    <div className="App">
-      {gameState === 'start' && <StartScreen onStart={handleStart} />}
-      {gameState === 'menu' && <MainMenu onSelectMenu={handleSelectMenu} />}
-      {gameState === 'stats' && <CharacterStats onClose={handleBack} />}
-      {gameState === 'levels' && <LevelSelect onClose={handleBack} />}
-      {gameState === 'lore' && <LoreLog onClose={handleBack} />}
-      {gameState === 'certificates' && <Certificates onClose={handleBack} />}
-      {gameState === 'credits' && <Credits onClose={handleBack} />}
+    <div className="App" style={{ cursor: 'none' }}>
+      <ParticleBackground />
+      <CustomCursor />
+      
+      <PageTransition isTransitioning={isTransitioning}>
+        {gameState === 'start' && <StartScreen onStart={handleStart} />}
+        {gameState === 'menu' && <MainMenu onSelectMenu={handleSelectMenu} />}
+        {gameState === 'stats' && <CharacterStats onClose={handleBack} />}
+        {gameState === 'levels' && <LevelSelect onClose={handleBack} />}
+        {gameState === 'lore' && <LoreLog onClose={handleBack} />}
+        {gameState === 'certificates' && <Certificates onClose={handleBack} />}
+        {gameState === 'credits' && <Credits onClose={handleBack} />}
+      </PageTransition>
     </div>
   );
 }

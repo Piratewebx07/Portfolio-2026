@@ -51,7 +51,7 @@ const LoreLog = ({ onClose }) => {
             {/* Profile Image */}
             <div className="mb-6 flex justify-center">
               <div className="relative">
-                <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-green-400" style={{
+                <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-green-400" style={{
                   boxShadow: '0 0 30px rgba(57, 255, 20, 0.6)'
                 }}>
                   <img 

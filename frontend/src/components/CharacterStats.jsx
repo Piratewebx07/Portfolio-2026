@@ -144,7 +144,7 @@ const CharacterStats = ({ onClose }) => {
                 <div className="text-gray-400 text-sm font-mono">Projects</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-cyan-400 mb-1" style={{ fontFamily: 'Orbitron, sans-serif' }}>3+</div>
+                <div className="text-3xl font-bold text-cyan-400 mb-1" style={{ fontFamily: 'Orbitron, sans-serif' }}>1.5+</div>
                 <div className="text-gray-400 text-sm font-mono">Years Exp</div>
               </div>
               <div className="text-center">

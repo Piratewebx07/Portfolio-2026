@@ -43,15 +43,9 @@ const LoreLog = ({ onClose }) => {
         </div>
 
         {/* Main Content */}
-        <div className="bg-[#0a0e27] border-2 border-green-400 p-8 md:p-12 mb-8" style={{
+        <div className="bg-[#0a0e27] border-2 border-green-400 p-8 md:p-12 mb-8 relative" style={{
           boxShadow: '0 0 30px rgba(57, 255, 20, 0.3), inset 0 0 30px rgba(57, 255, 20, 0.05)'
         }}>
-          {/* Corner Brackets */}
-          <div className="absolute top-0 left-0 w-6 h-6 border-t-4 border-l-4 border-green-400"></div>
-          <div className="absolute top-0 right-0 w-6 h-6 border-t-4 border-r-4 border-green-400"></div>
-          <div className="absolute bottom-0 left-0 w-6 h-6 border-b-4 border-l-4 border-green-400"></div>
-          <div className="absolute bottom-0 right-0 w-6 h-6 border-b-4 border-r-4 border-green-400"></div>
-
           {/* Title */}
           <div className="text-center mb-8">
             {/* Profile Image */}
@@ -95,21 +89,21 @@ const LoreLog = ({ onClose }) => {
               <div className="text-center p-4 border border-green-900 transition-all duration-300 hover:border-green-400" style={{
                 boxShadow: '0 0 10px rgba(57, 255, 20, 0.1)'
               }}>
-                <Trophy className="w-8 h-8 text-green-400 mx-auto mb-2" />
-                <div className="text-3xl font-bold text-green-400 mb-1" style={{ fontFamily: 'Orbitron, sans-serif' }}>
-                  {loreLog.stats.gamesShipped}
-                </div>
-                <div className="text-gray-400 text-sm font-mono">Games Shipped</div>
-              </div>
-              
-              <div className="text-center p-4 border border-green-900 transition-all duration-300 hover:border-green-400" style={{
-                boxShadow: '0 0 10px rgba(57, 255, 20, 0.1)'
-              }}>
                 <Clock className="w-8 h-8 text-green-400 mx-auto mb-2" />
                 <div className="text-3xl font-bold text-green-400 mb-1" style={{ fontFamily: 'Orbitron, sans-serif' }}>
                   {loreLog.stats.yearsExperience}
                 </div>
                 <div className="text-gray-400 text-sm font-mono">Years Experience</div>
+              </div>
+              
+              <div className="text-center p-4 border border-green-900 transition-all duration-300 hover:border-green-400" style={{
+                boxShadow: '0 0 10px rgba(57, 255, 20, 0.1)'
+              }}>
+                <Trophy className="w-8 h-8 text-green-400 mx-auto mb-2" />
+                <div className="text-3xl font-bold text-green-400 mb-1" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+                  {loreLog.stats.projectsCompleted}
+                </div>
+                <div className="text-gray-400 text-sm font-mono">Projects Completed</div>
               </div>
               
               <div className="text-center p-4 border border-green-900 transition-all duration-300 hover:border-green-400" style={{
@@ -127,9 +121,9 @@ const LoreLog = ({ onClose }) => {
               }}>
                 <BookOpen className="w-8 h-8 text-green-400 mx-auto mb-2" />
                 <div className="text-3xl font-bold text-green-400 mb-1" style={{ fontFamily: 'Orbitron, sans-serif' }}>
-                  {loreLog.stats.happyClients}
+                  {loreLog.stats.dedication}
                 </div>
-                <div className="text-gray-400 text-sm font-mono">Happy Clients</div>
+                <div className="text-gray-400 text-sm font-mono">Dedication</div>
               </div>
             </div>
           </div>

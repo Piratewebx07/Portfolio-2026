@@ -75,15 +75,9 @@ const CharacterStats = ({ onClose }) => {
         </div>
 
         {/* Stats Container */}
-        <div className="bg-[#0a0e27] border-2 border-cyan-400 p-8 md:p-12" style={{
+        <div className="bg-[#0a0e27] border-2 border-cyan-400 p-8 md:p-12 relative" style={{
           boxShadow: '0 0 30px rgba(0, 240, 255, 0.3), inset 0 0 30px rgba(0, 240, 255, 0.05)'
         }}>
-          {/* Corner Brackets */}
-          <div className="absolute top-0 left-0 w-6 h-6 border-t-4 border-l-4 border-cyan-400"></div>
-          <div className="absolute top-0 right-0 w-6 h-6 border-t-4 border-r-4 border-cyan-400"></div>
-          <div className="absolute bottom-0 left-0 w-6 h-6 border-b-4 border-l-4 border-cyan-400"></div>
-          <div className="absolute bottom-0 right-0 w-6 h-6 border-b-4 border-r-4 border-cyan-400"></div>
-
           <div className="mb-8">
             <h2 className="text-2xl font-bold text-white mb-2" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
               CORE ABILITIES

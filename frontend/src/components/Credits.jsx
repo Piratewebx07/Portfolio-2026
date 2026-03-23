@@ -51,15 +51,9 @@ const Credits = ({ onClose }) => {
         </div>
 
         {/* Main Content */}
-        <div className="bg-[#0a0e27] border-2 border-yellow-400 p-8 md:p-12 mb-8" style={{
+        <div className="bg-[#0a0e27] border-2 border-yellow-400 p-8 md:p-12 mb-8 relative" style={{
           boxShadow: '0 0 30px rgba(255, 255, 0, 0.3), inset 0 0 30px rgba(255, 255, 0, 0.05)'
         }}>
-          {/* Corner Brackets */}
-          <div className="absolute top-0 left-0 w-6 h-6 border-t-4 border-l-4 border-yellow-400"></div>
-          <div className="absolute top-0 right-0 w-6 h-6 border-t-4 border-r-4 border-yellow-400"></div>
-          <div className="absolute bottom-0 left-0 w-6 h-6 border-b-4 border-l-4 border-yellow-400"></div>
-          <div className="absolute bottom-0 right-0 w-6 h-6 border-b-4 border-r-4 border-yellow-400"></div>
-
           {/* Name and Title */}
           <div className="text-center mb-12">
             <h2 

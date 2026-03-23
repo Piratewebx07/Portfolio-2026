@@ -17,12 +17,6 @@ const MenuBox = ({ title, icon: Icon, onClick, color }) => {
         e.currentTarget.style.boxShadow = `0 0 10px ${color}40`;
       }}
     >
-      {/* Corner Brackets */}
-      <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2" style={{ borderColor: color }}></div>
-      <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2" style={{ borderColor: color }}></div>
-      <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2" style={{ borderColor: color }}></div>
-      <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2" style={{ borderColor: color }}></div>
-
       <div className="flex flex-col items-center gap-4">
         <Icon 
           className="w-16 h-16 transition-all duration-300 group-hover:scale-110" 
@@ -57,6 +51,7 @@ const MainMenu = ({ onSelectMenu }) => {
     { title: 'CHARACTER STATS', icon: User, action: 'stats', color: '#00f0ff' },
     { title: 'SELECT LEVEL', icon: Map, action: 'levels', color: '#ff006e' },
     { title: 'LORE LOG', icon: BookOpen, action: 'lore', color: '#39ff14' },
+    { title: 'CERTIFICATES', icon: Award, action: 'certificates', color: '#a855f7' },
     { title: 'CREDITS', icon: Award, action: 'credits', color: '#ffff00' }
   ];
 
@@ -101,7 +96,7 @@ const MainMenu = ({ onSelectMenu }) => {
         </div>
 
         {/* Menu Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {menuItems.map((item) => (
             <MenuBox
               key={item.action}

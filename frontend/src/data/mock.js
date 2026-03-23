@@ -57,7 +57,7 @@ export const projects = [
     level: 2,
     title: 'Jumpp Finvasia',
     subtitle: 'In-App Rewards Game',
-    year: '2023',
+    year: '2025',
     description: 'An in-app game for Jumpp in collaboration with Yes Bank.',
     role: 'Lead Game Design Intern at Centrelocus PVT. LTD.',
     challenges: 'Moodboard understanding and clients not sure what they wanted.',
@@ -91,7 +91,7 @@ export const projects = [
     level: 4,
     title: 'Lab Masters',
     subtitle: 'Educational Science Game',
-    year: '2023',
+    year: '2025',
     description: 'A personal college project, an educational themed game which simulated practicals from NCERT 9-10.',
     role: 'Game Designer',
     challenges: 'Simulating the exact experiment was a difficult task.',
@@ -111,10 +111,10 @@ export const loreLog = {
   description: `I am a GAME DESIGNER exploring how interaction, narrative, and systems shape player experience. I design engaging gameplay through iteration, player feedback, and thoughtful mechanics ranging from puzzle-based to narrative-driven concepts. I aim to create meaningful experiences that go beyond entertainment.`,
   profileImage: 'https://customer-assets.emergentagent.com/job_portfolio-quest-hub/artifacts/21q8c9t5_WhatsApp_Image_2026-03-21_at_11.44.27_AM-removebg-preview.png',
   stats: {
-    gamesShipped: '4+',
-    yearsExperience: '3+',
+    yearsExperience: '1+',
+    projectsCompleted: '4+',
     gameJams: '5+',
-    happyClients: '100%'
+    dedication: '100%'
   }
 };
 
@@ -125,9 +125,33 @@ export const credits = {
   phone: '+91 96736 07860',
   social: [
     { platform: 'LinkedIn', url: '#', icon: 'Linkedin' },
+    { platform: 'Instagram', url: '#', icon: 'Instagram' },
     { platform: 'GitHub', url: '#', icon: 'Github' },
-    { platform: 'ArtStation', url: '#', icon: 'Palette' },
     { platform: 'Twitter', url: '#', icon: 'Twitter' }
   ],
   resumeUrl: '/resume.pdf'
 };
+
+export const certificates = [
+  {
+    id: 1,
+    title: 'Game Design Certificate 1',
+    issuer: 'Institute Name',
+    date: '2024',
+    image: 'https://placehold.co/1200x900/1a1a2e/00f0ff?text=Certificate+1'
+  },
+  {
+    id: 2,
+    title: 'Game Design Certificate 2',
+    issuer: 'Institute Name',
+    date: '2024',
+    image: 'https://placehold.co/1200x900/1a1a2e/ff006e?text=Certificate+2'
+  },
+  {
+    id: 3,
+    title: 'Game Design Certificate 3',
+    issuer: 'Institute Name',
+    date: '2025',
+    image: 'https://placehold.co/1200x900/1a1a2e/39ff14?text=Certificate+3'
+  }
+];

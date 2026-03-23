@@ -77,7 +77,7 @@ const StartScreen = ({ onStart }) => {
           <div className="absolute -inset-2 border-2 border-cyan-400 opacity-50 animate-ping"></div>
         </div>
 
-        <p className="mt-8 text-cyan-300 text-sm font-mono">Game Designer • Level Designer • Creative Problem Solver</p>
+        <p className="mt-8 text-cyan-300 text-sm font-mono">Game Designer • Level Designer</p>
       </div>
 
       <style jsx>{`

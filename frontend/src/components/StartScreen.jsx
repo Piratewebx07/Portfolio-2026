@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Gamepad2 } from 'lucide-react';
+import { Gamepad2, Zap, Star, Target, Trophy, Cpu } from 'lucide-react';
 
 const StartScreen = ({ onStart }) => {
   const [glitch, setGlitch] = useState(false);
@@ -34,6 +34,14 @@ const StartScreen = ({ onStart }) => {
         backgroundImage: 'repeating-linear-gradient(0deg, rgba(0, 240, 255, 0.05) 0px, transparent 2px, transparent 4px)',
         animation: 'scanline 8s linear infinite'
       }}></div>
+
+      {/* Floating Gaming Icons */}
+      <Zap className="absolute top-20 left-10 w-8 h-8 text-cyan-400 opacity-30 animate-pulse" />
+      <Star className="absolute top-32 right-20 w-6 h-6 text-pink-400 opacity-40 animate-bounce" style={{ animationDuration: '3s' }} />
+      <Target className="absolute bottom-40 left-20 w-10 h-10 text-yellow-400 opacity-20 animate-pulse" style={{ animationDelay: '1s' }} />
+      <Trophy className="absolute bottom-32 right-32 w-8 h-8 text-green-400 opacity-30 animate-bounce" style={{ animationDuration: '4s' }} />
+      <Cpu className="absolute top-1/3 left-32 w-7 h-7 text-purple-400 opacity-25 animate-pulse" style={{ animationDelay: '2s' }} />
+      <Gamepad2 className="absolute bottom-1/3 right-24 w-9 h-9 text-cyan-300 opacity-20 animate-bounce" style={{ animationDuration: '5s' }} />
 
       {/* Content */}
       <div className="relative z-10 text-center px-4">

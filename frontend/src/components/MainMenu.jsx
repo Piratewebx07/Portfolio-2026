@@ -1,5 +1,5 @@
 import React from 'react';
-import { User, Map, BookOpen, Award } from 'lucide-react';
+import { User, Map, BookOpen, Award, Sword, Shield, Sparkles, Flame, Heart, Gem } from 'lucide-react';
 
 const MenuBox = ({ title, icon: Icon, onClick, color }) => {
   return (
@@ -72,6 +72,14 @@ const MainMenu = ({ onSelectMenu }) => {
           backgroundSize: '40px 40px'
         }}></div>
       </div>
+
+      {/* Floating Gaming Icons */}
+      <Sword className="absolute top-32 left-16 w-10 h-10 text-cyan-400 opacity-20 animate-pulse" style={{ animationDelay: '0.5s' }} />
+      <Shield className="absolute top-40 right-24 w-12 h-12 text-pink-400 opacity-15 animate-bounce" style={{ animationDuration: '3s' }} />
+      <Sparkles className="absolute bottom-48 left-32 w-8 h-8 text-yellow-400 opacity-25 animate-pulse" style={{ animationDelay: '1.5s' }} />
+      <Flame className="absolute bottom-40 right-40 w-10 h-10 text-red-400 opacity-20 animate-pulse" style={{ animationDelay: '1s' }} />
+      <Heart className="absolute top-1/2 left-20 w-7 h-7 text-pink-300 opacity-15 animate-bounce" style={{ animationDuration: '4s' }} />
+      <Gem className="absolute top-1/2 right-28 w-9 h-9 text-purple-400 opacity-20 animate-pulse" style={{ animationDelay: '2s' }} />
 
       <div className="relative z-10 max-w-6xl mx-auto">
         {/* Header */}

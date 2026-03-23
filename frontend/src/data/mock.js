@@ -9,6 +9,29 @@ export const skills = [
   { name: 'Problem Solving', level: 92, icon: 'Lightbulb' }
 ];
 
+export const software = [
+  { 
+    name: 'Unity 3D', 
+    logo: 'https://customer-assets.emergentagent.com/job_portfolio-quest-hub/artifacts/g6yx0l04_unity.png',
+    proficiency: 'Expert'
+  },
+  { 
+    name: 'Unreal Engine', 
+    logo: 'https://cdn2.unrealengine.com/ue-logo-stacked-unreal-engine-w-677x545-fac11de0943f.png',
+    proficiency: 'Intermediate'
+  },
+  { 
+    name: 'Procreate', 
+    logo: 'https://procreate.com/img/procreate-icon.png',
+    proficiency: 'Advanced'
+  },
+  { 
+    name: 'Figma', 
+    logo: 'https://customer-assets.emergentagent.com/job_portfolio-quest-hub/artifacts/1o6h0kd3_figma.jpg',
+    proficiency: 'Advanced'
+  }
+];
+
 export const projects = [
   {
     id: 1,
@@ -85,11 +108,8 @@ export const projects = [
 export const loreLog = {
   title: 'The Game Designer',
   intro: 'Welcome, Player!',
-  description: `I'm a passionate game designer who believes in creating immersive experiences that resonate with players. My journey started with a random 2AM idea about Indian horror games and has evolved into a quest to design meaningful, engaging gameplay.
-
-From leading AA-style horror projects to creating educational simulations, I thrive on turning creative challenges into innovative solutions. Whether it's a 24-hour game jam or a months-long development cycle, I bring dedication, creativity, and a player-first mindset to every project.
-
-My design philosophy: Every game should tell a story, every mechanic should serve a purpose, and every challenge should inspire innovation.`,
+  description: `I am a GAME DESIGNER exploring how interaction, narrative, and systems shape player experience. I design engaging gameplay through iteration, player feedback, and thoughtful mechanics ranging from puzzle-based to narrative-driven concepts. I aim to create meaningful experiences that go beyond entertainment.`,
+  profileImage: 'https://customer-assets.emergentagent.com/job_portfolio-quest-hub/artifacts/21q8c9t5_WhatsApp_Image_2026-03-21_at_11.44.27_AM-removebg-preview.png',
   stats: {
     gamesShipped: '4+',
     yearsExperience: '3+',
@@ -99,10 +119,10 @@ My design philosophy: Every game should tell a story, every mechanic should serv
 };
 
 export const credits = {
-  name: 'Your Name',
+  name: 'Pratham Warambhey',
   title: 'Game Designer & Level Designer',
-  email: 'your.email@example.com',
-  phone: '+91 XXXXX XXXXX',
+  email: 'prathamwarambhey@gmail.com',
+  phone: '+91 96736 07860',
   social: [
     { platform: 'LinkedIn', url: '#', icon: 'Linkedin' },
     { platform: 'GitHub', url: '#', icon: 'Github' },

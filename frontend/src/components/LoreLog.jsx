@@ -54,6 +54,22 @@ const LoreLog = ({ onClose }) => {
 
           {/* Title */}
           <div className="text-center mb-8">
+            {/* Profile Image */}
+            <div className="mb-6 flex justify-center">
+              <div className="relative">
+                <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-green-400" style={{
+                  boxShadow: '0 0 30px rgba(57, 255, 20, 0.6)'
+                }}>
+                  <img 
+                    src={loreLog.profileImage} 
+                    alt="Profile"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="absolute inset-0 rounded-full border-4 border-green-400 animate-ping opacity-20"></div>
+              </div>
+            </div>
+            
             <h2 
               className="text-3xl md:text-4xl font-bold text-green-400 mb-2"
               style={{ fontFamily: 'Orbitron, sans-serif', textShadow: '0 0 15px rgba(57, 255, 20, 0.6)' }}
@@ -65,11 +81,9 @@ const LoreLog = ({ onClose }) => {
 
           {/* Description */}
           <div className="prose prose-invert max-w-none mb-8">
-            {loreLog.description.split('\n\n').map((paragraph, index) => (
-              <p key={index} className="text-gray-300 text-lg leading-relaxed mb-4">
-                {paragraph}
-              </p>
-            ))}
+            <p className="text-gray-300 text-lg leading-relaxed">
+              {loreLog.description}
+            </p>
           </div>
 
           {/* Stats Grid */}

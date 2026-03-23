@@ -1,7 +1,7 @@
 import React from 'react';
 import { X, TrendingUp } from 'lucide-react';
 import * as Icons from 'lucide-react';
-import { skills } from '../data/mock';
+import { skills, software } from '../data/mock';
 
 const StatBar = ({ skill }) => {
   const IconComponent = Icons[skill.icon] || Icons.Star;
@@ -94,6 +94,32 @@ const CharacterStats = ({ onClose }) => {
           {skills.map((skill, index) => (
             <StatBar key={index} skill={skill} />
           ))}
+
+          {/* Software Section */}
+          <div className="mt-12 pt-8 border-t-2 border-cyan-900">
+            <h2 className="text-2xl font-bold text-white mb-6" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+              SOFTWARE & TOOLS
+            </h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {software.map((tool, index) => (
+                <div 
+                  key={index}
+                  className="flex flex-col items-center p-4 border border-cyan-900 transition-all duration-300 hover:border-cyan-400 hover:scale-105 group"
+                  style={{ boxShadow: '0 0 10px rgba(0, 240, 255, 0.1)' }}
+                >
+                  <div className="w-16 h-16 mb-3 flex items-center justify-center bg-white rounded-lg overflow-hidden">
+                    <img 
+                      src={tool.logo} 
+                      alt={tool.name}
+                      className="w-full h-full object-contain p-2"
+                    />
+                  </div>
+                  <div className="text-white font-semibold text-sm text-center mb-1">{tool.name}</div>
+                  <div className="text-cyan-400 text-xs font-mono">{tool.proficiency}</div>
+                </div>
+              ))}
+            </div>
+          </div>
 
           {/* Overall Stats */}
           <div className="mt-12 pt-8 border-t-2 border-cyan-900">

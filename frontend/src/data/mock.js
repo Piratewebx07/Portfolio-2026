@@ -61,8 +61,11 @@ export const projects = [
     solution: 'Provided multiple iterations aligned with the mood board and many choices.',
     technologies: ['Unity', 'C#', 'UI Design', 'Client Management'],
     images: [
-      'https://placehold.co/800x600/1a1a2e/00f0ff?text=Jumpp+Game+1',
-      'https://placehold.co/800x600/1a1a2e/ff006e?text=Jumpp+Game+2'
+      'https://customer-assets.emergentagent.com/job_portfolio-quest-hub/artifacts/fst9o1r3_Frame%208.png',
+      'https://customer-assets.emergentagent.com/job_portfolio-quest-hub/artifacts/ca72yvn2_Frame%209.png',
+      'https://customer-assets.emergentagent.com/job_portfolio-quest-hub/artifacts/kdhscr0q_Frame%2010.png',
+      'https://customer-assets.emergentagent.com/job_portfolio-quest-hub/artifacts/jfdltr1a_Frame%2011.png',
+      'https://customer-assets.emergentagent.com/job_portfolio-quest-hub/artifacts/9x2m1hvz_Frame%2012.png'
     ],
     status: 'completed'
   },

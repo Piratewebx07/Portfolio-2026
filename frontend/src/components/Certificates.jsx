@@ -149,20 +149,62 @@ const Certificates = ({ onClose }) => {
           </button>
         </div>
 
-        {/* Certificates Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {certificates.map((certificate) => (
-            <CertificateCard
-              key={certificate.id}
-              certificate={certificate}
-              onClick={() => setSelectedCertificate(certificate)}
-            />
-          ))}
+        {/* Certificate Preview Grid */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold text-purple-400 mb-6 text-center" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+            CERTIFICATE PREVIEW
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            {certificates.map((cert) => (
+              <button
+                key={`preview-${cert.id}`}
+                onClick={() => setSelectedCertificate(cert)}
+                className="group relative overflow-hidden border-2 border-purple-900 hover:border-purple-400 transition-all duration-300"
+                style={{ 
+                  aspectRatio: '4/3',
+                  boxShadow: '0 4px 10px rgba(168, 85, 247, 0.2)'
+                }}
+              >
+                <img 
+                  src={cert.image} 
+                  alt={cert.title}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+                <div className="absolute inset-0 bg-purple-500 bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                  <Maximize2 className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+                <div className="absolute bottom-2 left-2 right-2">
+                  <p className="text-purple-300 text-xs font-semibold truncate">{cert.title}</p>
+                  <p className="text-purple-400 text-xs opacity-80">{cert.date}</p>
+                </div>
+              </button>
+            ))}
+          </div>
+          <p className="text-center text-purple-400 text-sm font-mono animate-pulse">
+            Click any certificate to view in full screen
+          </p>
+        </div>
+
+        {/* Detailed Certificates Grid */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold text-purple-400 mb-6 text-center" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+            DETAILED VIEW
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {certificates.map((certificate) => (
+              <CertificateCard
+                key={certificate.id}
+                certificate={certificate}
+                onClick={() => setSelectedCertificate(certificate)}
+              />
+            ))}
+          </div>
         </div>
 
         {/* Instructions */}
         <div className="text-center mb-8">
-          <p className="text-purple-400 text-sm font-mono mb-4">
+          <p className="text-purple-400 text-sm font-mono">
             Click any certificate to view in full screen • Press ESC to close
           </p>
         </div>

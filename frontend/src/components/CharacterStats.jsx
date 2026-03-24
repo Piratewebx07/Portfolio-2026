@@ -1,0 +1,177 @@
+import React from 'react';
+import { X, TrendingUp } from 'lucide-react';
+import * as Icons from 'lucide-react';
+import { skills, software } from '../data/mock';
+
+const SkillCard = ({ skill }) => {
+  const IconComponent = Icons[skill.icon] || Icons.Star;
+  
+  return (
+    <div 
+      className="group relative bg-gradient-to-br from-[#0f1435] to-[#0a0e27] border border-cyan-900 p-4 transition-all duration-300 hover:border-cyan-400"
+      style={{ 
+        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.3)',
+        transform: 'translateZ(0)',
+        perspective: '1000px'
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.transform = 'translateY(-8px) rotateX(5deg)';
+        e.currentTarget.style.boxShadow = '0 20px 40px rgba(0, 240, 255, 0.4)';
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.transform = 'translateY(0) rotateX(0deg)';
+        e.currentTarget.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.3)';
+      }}
+    >
+      <div className="flex items-center gap-3">
+        <div 
+          className="p-3 bg-cyan-500 bg-opacity-10 rounded-lg transition-all duration-300 group-hover:bg-opacity-20"
+          style={{ boxShadow: '0 0 20px rgba(0, 240, 255, 0.2)' }}
+        >
+          <IconComponent className="w-6 h-6 text-cyan-400" />
+        </div>
+        <span className="text-white font-semibold text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+          {skill.name}
+        </span>
+      </div>
+    </div>
+  );
+};
+
+const CharacterStats = ({ onClose }) => {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-[#050510] via-[#0a0e27] to-[#050510] py-12 px-4 relative overflow-hidden">
+      {/* Background Effects */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `
+            linear-gradient(rgba(0, 240, 255, 0.2) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0, 240, 255, 0.2) 1px, transparent 1px)
+          `,
+          backgroundSize: '40px 40px'
+        }}></div>
+      </div>
+
+      <div className="relative z-10 max-w-4xl mx-auto">
+        {/* Header */}
+        <div className="flex items-center justify-between mb-12">
+          <div>
+            <h1 
+              className="text-4xl md:text-6xl font-bold mb-2"
+              style={{
+                fontFamily: 'Orbitron, sans-serif',
+                color: '#00f0ff',
+                textShadow: '0 0 20px rgba(0, 240, 255, 0.8)'
+              }}
+            >
+              CHARACTER STATS
+            </h1>
+            <p className="text-cyan-300 font-mono flex items-center gap-2">
+              <TrendingUp className="w-4 h-4" />
+              Skill Proficiency Overview
+            </p>
+          </div>
+          <button
+            onClick={onClose}
+            className="p-3 border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition-all duration-300"
+            style={{ boxShadow: '0 0 10px rgba(0, 240, 255, 0.5)' }}
+          >
+            <X className="w-6 h-6" />
+          </button>
+        </div>
+
+        {/* Stats Container */}
+        <div className="bg-[#0a0e27] border-2 border-cyan-400 p-8 md:p-12 relative" style={{
+          boxShadow: '0 0 30px rgba(0, 240, 255, 0.3), inset 0 0 30px rgba(0, 240, 255, 0.05)'
+        }}>
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold text-white mb-2" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+              CORE ABILITIES
+            </h2>
+            <div className="h-1 w-32 bg-gradient-to-r from-cyan-500 to-transparent"></div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+            {skills.map((skill, index) => (
+              <SkillCard key={index} skill={skill} />
+            ))}
+          </div>
+
+          {/* Software Section */}
+          <div className="mt-12 pt-8 border-t-2 border-cyan-900">
+            <h2 className="text-2xl font-bold text-white mb-6" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+              SOFTWARE & TOOLS
+            </h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {software.map((tool, index) => (
+                <div 
+                  key={index}
+                  className="flex flex-col items-center p-4 border border-cyan-900 transition-all duration-300 hover:border-cyan-400 group bg-gradient-to-br from-[#0f1435] to-[#0a0e27]"
+                  style={{ 
+                    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.3)',
+                    transform: 'translateZ(0)'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-8px) scale(1.05)';
+                    e.currentTarget.style.boxShadow = '0 20px 40px rgba(0, 240, 255, 0.4)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                    e.currentTarget.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.3)';
+                  }}
+                >
+                  <div 
+                    className="w-16 h-16 mb-3 flex items-center justify-center bg-white rounded-lg overflow-hidden transition-transform duration-300 group-hover:scale-110"
+                    style={{ boxShadow: '0 4px 10px rgba(0, 240, 255, 0.3)' }}
+                  >
+                    <img 
+                      src={tool.logo} 
+                      alt={tool.name}
+                      className="w-full h-full object-contain p-2"
+                    />
+                  </div>
+                  <div className="text-white font-semibold text-sm text-center">{tool.name}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Overall Stats */}
+          <div className="mt-12 pt-8 border-t-2 border-cyan-900">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-cyan-400 mb-1" style={{ fontFamily: 'Orbitron, sans-serif' }}>10+</div>
+                <div className="text-gray-400 text-sm font-mono">Projects</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-cyan-400 mb-1" style={{ fontFamily: 'Orbitron, sans-serif' }}>1.5+</div>
+                <div className="text-gray-400 text-sm font-mono">Years Exp</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-cyan-400 mb-1" style={{ fontFamily: 'Orbitron, sans-serif' }}>5+</div>
+                <div className="text-gray-400 text-sm font-mono">Game Jams</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-cyan-400 mb-1" style={{ fontFamily: 'Orbitron, sans-serif' }}>100%</div>
+                <div className="text-gray-400 text-sm font-mono">Dedication</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Back Button */}
+        <div className="text-center mt-8">
+          <button
+            onClick={onClose}
+            className="px-8 py-3 border-2 border-cyan-400 text-cyan-400 font-bold font-mono hover:bg-cyan-400 hover:text-black transition-all duration-300"
+            style={{ boxShadow: '0 0 10px rgba(0, 240, 255, 0.5)' }}
+          >
+            [ BACK TO MENU ]
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default CharacterStats;

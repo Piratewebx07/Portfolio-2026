@@ -136,7 +136,7 @@ const Credits = ({ onClose }) => {
               <Download className="w-6 h-6 transition-transform duration-300 group-hover:translate-y-1" />
               DOWNLOAD RESUME.PDF
             </button>
-            <p className="text-gray-500 text-sm mt-3 font-mono">[ Resume will be available once uploaded ]</p>
+            <p className="text-gray-500 text-sm mt-3 font-mono">[ Click To Download Resume ]</p>
           </div>
         </div>
 
